@@ -1,0 +1,26 @@
+#cafes {
+	color: #FACC6E;
+	margin-left: 20px;
+}
+
+.container_hour {
+	box-shadow: 0px 0px 5px 0px #CCC;
+	text-align: center;
+	padding-top: 80px;
+	margin-top: 80px;
+	width: 100%;
+	min-width: 700px;
+	height: 1700px;
+}
+
+#cafe_name {
+	margin-top: 70px;
+}
+
+#cafe_pic {
+	margin-top: 20px;
+	height: 300px;
+	background-image: url("../pics/background_4.jpg");
+	background-size: cover;
+	border: 1px solid gray;
+}

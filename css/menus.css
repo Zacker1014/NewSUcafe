@@ -1,0 +1,51 @@
+body {
+	height: 2200px;
+}
+
+.container_menus {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 170px;
+	margin-bottom: 50px;
+	width: 250px;
+	border: 1px solid #CCC;
+
+}
+
+.container_menus a {
+	text-decoration: none;
+	color: black;
+}
+
+.container_menus a:hover{
+	color: orange;
+}
+
+.container_menus a:active{
+	color: blue;
+}
+
+#Entree {
+	height: 500px;
+	background-image: url("../pics/background_5.jpg");
+	border: 1px solid #CCC;
+
+}
+
+#Drinks {
+	height: 500px;
+	background-image: url("../pics/background_2.jpg");
+	border: 1px solid #CCC;
+}
+
+#Proteins {
+	height: 500px;
+	background-image: url("../pics/background_3.jpg");
+	border: 1px solid #CCC;
+}
+
+#Dessert {
+	height: 500px;
+	background-image: url("../pics/background_4.jpg");
+	border: 1px solid #CCC;
+}
