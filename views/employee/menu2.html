@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="employee.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <h1 class="hi">Hello</h1>
+  <table id="example" class="display" style="width:100%">
+    <thead>
+
+      <tr>
+        <th>OrderID</th>
+        <th>Items</th>
+        <th>Status</th>
+        <th>Total Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+
+
+
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>OrderID</th>
+        <th>Items</th>
+        <th>Status</th>
+        <th>Total Price</th>
+
+      </tr>
+    </tfoot>
+  </table>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+  <script src="jsLib.js" charset="utf-8"></script>
+  <script src="dbLib.js" charset="utf-8"></script>
+
+</body>
+
+</html>

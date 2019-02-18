@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="views/employee/employee.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <h1 class="hi"> Hello, Dear SU Cafe Employee  </h1>
+<br><br>
+
+
+
+  <table id="example" class="display" style="width:100%">
+    <thead>
+
+      <tr>
+        <th> <input type="hidden" class="checkthis" /> </th>
+
+        <th>OrderID</th>
+        <th>Items</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for (let i=0; i<ordersinfo.length; i++) { %>
+
+        <tr>
+          <form class="item" action="/updateOrder" method="post">
+          <th> <input type="checkbox" name="checkbox" value="<%=ordersinfo[i]._id%>" onChange="this.form.submit()" > </th>
+        </form>
+          <td>
+            <%=  ordersinfo[i].userid  %>
+          </td>
+          <td>
+            <%=  ordersinfo[i].items  %>
+          </td>
+          <td>
+            <%=  ordersinfo[i].status  %>
+          </td>
+
+        </tr>
+      <% } %>
+
+
+
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <th> <input type="hidden" class="checkthis" /> </th>
+        <th>OrderID</th>
+        <th>Items</th>
+        <th>Status</th>
+
+      </tr>
+    </tfoot>
+  </table>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#example').DataTable();
+    });
+  </script>
+  <script src="views/employee/jsLib.js" charset="utf-8"></script>
+  <script src="views/employee/dbLib.js" charset="utf-8"></script>
+
+</body>
+
+</html>
