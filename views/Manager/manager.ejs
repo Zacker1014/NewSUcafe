@@ -11,8 +11,9 @@
 <body>
 
   <h1 class="hi"> Hello, Dear SU Cafe Manager  </h1>
-<br><br>
 
+  <h2>Click the button when completed the order.</h2>
+  <h3>Click on table header to sort base on that header value.</h3>
 
 
   <table id="example" class="display" style="width:100%">
@@ -37,7 +38,9 @@
             <%=  ordersinfo[i].userid  %>
           </td>
           <td>
-            <%=  ordersinfo[i].items  %>
+            <% for (let j=0; j< ordersinfo[i].items.length; j++) { %>
+              <%=  ordersinfo[i].items[j].name  %>
+              <% } %>
           </td>
           <td>
             <%=  ordersinfo[i].status  %>
@@ -62,10 +65,9 @@
   </table>
 
   <hr>
-  <br>
-  <br>
-  <br>
 
+  <h2>Click the button to delete a employee.</h2>
+  <h3>Click on table header to sort base on that header value.</h3>
 
   <table id="example2" class="display" style="width:100%">
     <thead>
