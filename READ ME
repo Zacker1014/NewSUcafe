@@ -1,0 +1,6 @@
+This project involve lots of package.
+Make sure you have the environment to run this program. 
+The environment for this project : node.js mongoDB(databse) npm
+npm install these package: "ejs" "express" "body-parser" "mongoose" ( the command "npm i" inside the package should work.)
+localhost 3000
+mongodb://localhost:27017/SUCAFE
