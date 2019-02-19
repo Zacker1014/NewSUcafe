@@ -34,16 +34,7 @@ const userSchema = {
 
 const User = mongoose.model("user", userSchema);
 
-const user1 = new User({
-  fname: "Zinan",
-  lname: "Ma",
-  netid: "123",
-  password: "String",
-  occupation: "OC",
-  email: "1@e.com"
-});
 
-//user1.save();
 
 const itemsSchema = {
   name: String,
@@ -52,21 +43,6 @@ const itemsSchema = {
 
 const Item = mongoose.model("item", itemsSchema); //item is singular
 
-const item1 = new Item({
-  name: "coke",
-  price: 2.0
-});
-
-item1.save();
-
-const item2 = new Item({
-  name: "cake",
-  price: 3.0
-});
-
-item2.save();
-
-const test = [item1, item2];
 
 const orderSchema = {
   userid: Number,
@@ -77,41 +53,65 @@ const orderSchema = {
 
 const Order = mongoose.model("order", orderSchema);
 
-const order0 = new Order({
-  userid: globalOrderID,
-  items: test,
-  status: "Processing"
-});
 
-//order0.save();
-globalOrderID = globalOrderID + 1;
+/////////////////////////////////testing/////////////
 
-const order1 = new Order({
-  userid: globalOrderID,
-  items: test,
-  status: "Processing"
-});
+// const user1 = new User({
+//   fname: "Zinan",
+//   lname: "Ma",
+//   netid: "123",
+//   password: "String",
+//   occupation: "OC",
+//   email: "1@e.com"
+// });
+//
+// //user1.save();
 
-//order1.save();
-globalOrderID = globalOrderID + 1;
+// const item1 = new Item({
+//   name: "coke",
+//   price: 2.0
+// });
+//
+// item1.save();
+//
+// const item2 = new Item({
+//   name: "cake",
+//   price: 3.0
+// });
+//
+// item2.save();
+//
+// const test = [item1, item2];
 
-const order2 = new Order({
-  userid: globalOrderID,
-  items: test,
-  status: "Processing"
-});
+// const order0 = new Order({
+//   userid: globalOrderID,
+//   items: test,
+//   status: "Processing"
+// });
+//
+// //order0.save();
 
-//order2.save();
+/////////////////////////////////testing/////////////
+
 
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/home.html"); //__dirname:current file location
 });
 
-// app.get("/menu2.html",function(req,res){
-//   res.sendFile(__dirname+"/menu2.html");
-// });
+app.get("/studentMenu",function(req,res){
+  res.render("student/studentMenu");
+});
 
+app.post("/addOrder",function(req,res){
+  console.log(1080);
+  console.log(req.body.addedOrderInfo); //this give back an order in string format
+  var newOrder = JSON.parse(req.body.addedOrderInfo);
+  var newOrderObj = new Order(newOrder);
+  newOrderObj.save();
+
+  res.redirect("/success.html");
+});
 
 
 app.post("/signin.html", function(req, res) {
@@ -132,7 +132,7 @@ app.post("/signin.html", function(req, res) {
         if (idd.password === inPw) { //Successfully sign in
 
           if (idd.occupation === "stu") {
-            res.redirect("/menu2.html");
+            res.redirect("/studentMenu");
           } else if (idd.occupation === "mng") {
 
             // let allOrders=[];
@@ -154,9 +154,6 @@ app.post("/signin.html", function(req, res) {
                 });
               }
             });
-
-
-
           } else if (idd.occupation === "epe") { //if this person is employee
             Order.find({
               status: "Processing"
@@ -171,11 +168,6 @@ app.post("/signin.html", function(req, res) {
                 });
               }
             });
-
-
-
-
-
           } else {
             console.log("There are some problem with the occupation of this user.");
           }
@@ -227,8 +219,6 @@ app.post("/signup.html", function(req, res) {
   console.log("statusCode for Signup.html");
   console.log(res.statusCode);
 });
-
-
 
 //cannot update order and changes status to complete
 app.post("/updateOrder", function(req, res) {
