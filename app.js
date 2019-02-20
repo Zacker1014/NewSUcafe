@@ -110,7 +110,7 @@ app.post("/addOrder",function(req,res){
   var newOrderObj = new Order(newOrder);
   newOrderObj.save();
 
-  res.redirect("/success.html");
+  res.redirect("/orderSuccess.html");
 });
 
 

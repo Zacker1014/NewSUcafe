@@ -1,273 +1,276 @@
-<%- include("head") -%>
+  <%- include("head")-%>
+
+		<div id="Entree">
+			<h2>Entree</h2>
+			<div id="pics">
+				<img src="./pics/pizza.jpg" height="200" width="200"/>
+				<img src="./pics/steak.jpg" height="200" width="200"/>
+			</div>
+
+			<div id="dis">
+				<a> Pizza (10 dollars) </a>
+				<a> Steak (11 dollars) </a>
+			</div>
+
+			<div id="btn">
+				<button id ="1" onclick="save1()" value="Pizza"> Add </button>
+				<button id ="5" onclick="save5()" value="Steak"> Add </button>
+			</div>
+		</div>
+
+		<div id="Drinks">
+			<h2>Drinks</h2>
+			<div id="pics">
+				<img src="./pics/coke.jpg" height="200" width="200"/>
+				<img src="./pics/lemonade.jpg" height="200" width="200"/>
+			</div>
+
+			<div id="dis">
+				<a> Coke (3 dollars) </a>
+				<a> Lemonade (4 dollars) </a>
+			</div>
+
+			<div id="btn">
+				<button id ="2" onclick="save2()" value="Coke"> Add </button>
+				<button id ="6" onclick="save6()" value="Lemonade"> Add </button>
+			</div>
+		</div>
+
+		<div id="Dessert">
+			<h2>Dessert</h2>
+			<div id="pics">
+				<img src="./pics/cake.jpg" height="200" width="200"/>
+				<img src="./pics/cookie.jpg" height="200" width="200"/>
+			</div>
+
+			<div id="dis">
+				<a> Cake (5 dollars) </a>
+				<a> Cookie (1 dollars) </a>
+			</div>
+
+			<div id="btn">
+				<button id ="3" onclick="save3()" value="Cake"> Add </button>
+				<button id ="7" onclick="save7()" value="Cookie"> Add </button>
+			</div>
+		</div>
+
+		<div id="Combo">
+			<h2>Combo</h2>
+			<div id="pics">
+				<img src="./pics/combo1.jpg" height="200" width="200"/>
+				<img src="./pics/combo2.jpg" height="200" width="200"/>
+			</div>
+
+			<div id="dis">
+				<a> H-Combo (12 dollars) </a>
+				<a> S-Combo (15 dollars) </a>
+			</div>
+
+			<div id="btn">
+				<button id ="4" onclick="save4()" value="H-Combo"> Add </button>
+				<button id ="8" onclick="save8()" value="S-Combo"> Add </button>
+			</div>
+
+		</div>
+
+
+		<div class="cart">
+			<div class="tb">
+			  <table id="myTable">
+			    <th>Items</th>
+			    <th>Price</th>
+			  </table>
+			</div>
+
+			<button style="width:70px;height:25px;background-color:green;color:white;border:1px solid black;" onclick="myFunction1()">print array</button>
+			<p style="text-align:center; font-weight:bold; font-size:20px;color:orange">Items</p>
+			<p id="arr" style="text-align:center; font-weight:bold; font-size:16px;"></p>
+			<p style="text-align:center; font-weight:bold; font-size:20px;color:orange">Items Price</p>
+			<p id="arr2" style="text-align:center; font-weight:bold; font-size:16px;"><br></p>
+			<button style="width:70px;height:25px;background-color:green;color:white;border:1px solid black;" onclick="itemsPrice.forEach(myFunction2)">Calculate</button>
+			<p style="text-align:center; font-weight:bold; font-size:20px;color:orange">Total Price</p>
+
+			<p id="totalP" style="text-align:center; font-weight:bold; font-size:40px;"></p>
+
+			 <p style="color:gray"><br>Please enter your netID to confirm order!</p>
+			 <input id="inid" type="text" name="" placeholder="netID" value="" style="border:1px solid gray;text-align:center">
+			 <button style="width:70px;height:25px;background-color:green;color:white;border:1px solid black;" onclick="createOrderObject()">confirm</button>
+
+			<form class="" action="/addOrder" method="post">
+
+			 <input id="add" type="checkbox" onChange="this.form.submit()" name="addedOrderInfo" value="">
 
+			</form>
 
+		</div>
+		<script type="text/javascript">
+		   var items = [];
+		   var itemsPrice = [];
+		   var totalPrice=0;
 
-<form class="" action="index.html" method="post">
+		function save1(){
 
+		  var a = document.getElementById("1").value;
 
-  <div class="pic1">
-    <img src="pics/pizza.jpg" height="100" width="100" />
-    <img src="pics/coke.jpg" height="100" width="100" />
-    <img src="pics/cake.jpg" height="100" width="100" />
-    <img src="pics/combo1.jpg" height="100" width="100" />
-  </div>
+		  items.push(a);
+		  itemsPrice.push(10);
 
-  <div class="name">
-    <ul>
-      <li>Pizza(10 dollars)</li>
-      <li>Coke(3 dollars)</li>
-      <li>Cake(5 dollars)</li>
-      <li>Hamburger Combo(12 dollars)</li>
-    </ul>
-  </div>
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(-1);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  cell1.innerHTML = a;
+		  cell2.innerHTML = 10;
+		}
+
+		function save2(){
+
+		  var a = document.getElementById("2").value;
+		  items.push(a);
+		  itemsPrice.push(3);
+
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(-1);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  cell1.innerHTML = a;
+		  cell2.innerHTML = 3;
+		}
+
+		function save3(){
+
+		  var a = document.getElementById("3").value;
+		  items.push(a);
+		  itemsPrice.push(5);
+
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(-1);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  cell1.innerHTML = a;
+		  cell2.innerHTML = 5;
+		}
+
+		function save4(){
+
+		  var a = document.getElementById("4").value;
+
+		  items.push(a);
+		  itemsPrice.push(12);
+
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(-1);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  cell1.innerHTML = a;
+		  cell2.innerHTML = 12;
+		}
+
+		function save5(){
+
+		  var a = document.getElementById("5").value;
+
+		  items.push(a);
+		  itemsPrice.push(11);
 
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(-1);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  cell1.innerHTML = a;
+		  cell2.innerHTML = 11;
+		}
 
-  <div class="btn1">
-    <ul>
-      <li><input id="1" type="button" onclick="save1()" value="Pizza" /></li>
-      <li><input id="2" type="button" onclick="save2()" value="Coke" /></li>
-      <li><input id="3" type="button" onclick="save3()" value="Cake" /></li>
-      <li><input id="4" type="button" onclick="save4()" value="Hamburger Combo" /></li>
-    </ul>
-  </div>
+		function save6(){
 
-  <div class="pic1">
-    <img  src="pics/steak.jpg" height="100" width="100" />
-    <img  src="pics/lemonade.jpg" height="100" width="100" />
-    <img  src="pics/cookie.jpg" height="100" width="100" />
-    <img  src="pics/combo2.jpg" height="100" width="100" />
-  </div>
+		  var a = document.getElementById("6").value;
 
-  <div class="name">
-    <ul>
-      <li>Steak(11 dollars)</li>
-      <li>Lemonade(4 dollars)</li>
-      <li>Cookie(1 dollars)</li>
-      <li>Steak Combo(15 dollars)</li>
-    </ul>
-  </div>
+		  items.push(a);
 
-  <div class="btn1">
-    <ul>
-      <li><input id="5" type="button" onclick="save5()" value="Steak" /></li>
-      <li><input id="6" type="button" onclick="save6()" value="Lemonade" /></li>
-      <li><input id="7" type="button" onclick="save7()" value="Cookie" /></li>
-      <li><input id="8" type="button" onclick="save8()" value="Steak Combo" /></li>
-    </ul>
-  </div>
+		  itemsPrice.push(4);
 
-<br>
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(-1);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  cell1.innerHTML = a;
+		  cell2.innerHTML = 4;
+		}
 
+		function save7(){
 
-</form>
-<br><br><br><br><br>
+		  var a = document.getElementById("7").value;
+		  items.push(a);
+		  itemsPrice.push(1);
 
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(-1);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  cell1.innerHTML = a;
+		  cell2.innerHTML = 1;
+		}
 
-<div class="tb">
-  <table id="myTable">
-    <th>Items</th>
-    <th>Price</th>
+		function save8(){
+		  var a = document.getElementById("8").value;
+		  items.push(a);
+		  itemsPrice.push(15);
 
-  </table>
-</div>
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(-1);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  cell1.innerHTML = a;
+		  cell2.innerHTML = 15;
+		}
 
-<br>
+		//print items and item Price to Web
+		function myFunction1(){
+		    document.getElementById("arr").innerHTML = items.toString();
+		    document.getElementById("arr2").innerHTML = itemsPrice.toString();
+		}
 
 
-<button onclick="myFunction1()">print array</button>
-<p style="text-align:center; font-weight:bold; font-size:40px;">Items</p>
-<p id="arr" style="text-align:center; font-weight:bold; font-size:40px;"></p>
-<p style="text-align:center; font-weight:bold; font-size:40px;">Items Price</p>
-<p id="arr2" style="text-align:center; font-weight:bold; font-size:40px;"></p>
-<p style="text-align:center; font-weight:bold; font-size:40px;">Total Price</p>
+		function myFunction2(item, index) {
+		  totalP = document.getElementById("totalP");
+		  totalP.innerHTML = Number(totalP.innerHTML)+(item);
+		}
 
+		function createOrderObject(){
+		  var inputid = document.getElementById("inid").value;
+		  var theseItems = [];
 
-<button onclick="itemsPrice.forEach(myFunction2)">Calculate</button>
-<p id="totalP" style="text-align:center; font-weight:bold; font-size:40px;"></p>
+		  var z;
+		  for (z=0;z<items.length;z++){
+		    var thisItem = {
+		      name:items[z],
+		      price:itemsPrice[z]
+		    };
+		    theseItems.push(thisItem);
+		  }
 
+		  var thisOrder ={
+		    userid: inputid,
+		    items: theseItems,
+		    status: "Processing"
+		  };
 
- <!-- a from to submit data -->
- <p>Please enter your netID to confirm order!</p>
- <input id="inid" type="text" name="" placeholder="netID" value="">
- <button onclick="createOrderObject()">confirm</button>
+		  var orderString =  JSON.stringify(thisOrder)
+		//  alert(orderString);
+		   document.getElementById("add").setAttribute("value",orderString);
+		//   alert(document.getElementById("add").value);
 
+		  alert("Please click the button at the bottom");
+		}
 
 
-<form class="" action="/addOrder" method="post">
+		</script>
 
-  <input id="add" type="checkbox" onChange="this.form.submit()" name="addedOrderInfo" value="">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="/views/Student/studentMenu.js" charset="utf-8"></script>
 
 
-</form>
+	</body>
 
-
-
-
-<script type="text/javascript">
-   var items = [];
-   var itemsPrice = [];
-   var totalPrice=0;
-
-function save1(){
-
-  var a = document.getElementById("1").value;
-
-  items.push(a);
-  itemsPrice.push(10);
-
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = a;
-  cell2.innerHTML = 10;
-}
-
-function save2(){
-
-  var a = document.getElementById("2").value;
-  items.push(a);
-  itemsPrice.push(3);
-
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = a;
-  cell2.innerHTML = 3;
-}
-
-function save3(){
-
-  var a = document.getElementById("3").value;
-  items.push(a);
-  itemsPrice.push(5);
-
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = a;
-  cell2.innerHTML = 5;
-}
-
-function save4(){
-
-  var a = document.getElementById("4").value;
-
-  items.push(a);
-  itemsPrice.push(12);
-
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = a;
-  cell2.innerHTML = 12;
-}
-
-function save5(){
-
-  var a = document.getElementById("5").value;
-
-  items.push(a);
-  itemsPrice.push(11);
-
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = a;
-  cell2.innerHTML = 11;
-}
-
-function save6(){
-
-  var a = document.getElementById("6").value;
-
-  items.push(a);
-
-  itemsPrice.push(4);
-
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = a;
-  cell2.innerHTML = 4;
-}
-
-function save7(){
-
-  var a = document.getElementById("7").value;
-  items.push(a);
-  itemsPrice.push(1);
-
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = a;
-  cell2.innerHTML = 1;
-}
-
-function save8(){
-  var a = document.getElementById("8").value;
-  items.push(a);
-  itemsPrice.push(15);
-
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = a;
-  cell2.innerHTML = 15;
-}
-
-//print items and item Price to Web
-function myFunction1(){
-    document.getElementById("arr").innerHTML = items.toString();
-    document.getElementById("arr2").innerHTML = itemsPrice.toString();
-}
-
-
-function myFunction2(item, index) {
-  totalP = document.getElementById("totalP");
-  totalP.innerHTML = Number(totalP.innerHTML)+(item);
-}
-
-function createOrderObject(){
-  var inputid = document.getElementById("inid").value;
-  var theseItems = [];
-
-  var z;
-  for (z=0;z<items.length;z++){
-    var thisItem = {
-      name:items[z],
-      price:itemsPrice[z]
-    };
-    theseItems.push(thisItem);
-  }
-
-  var thisOrder ={
-    userid: inputid,
-    items: theseItems,
-    status: "Processing"
-  };
-
-  var orderString =  JSON.stringify(thisOrder)
-//  alert(orderString);
-   document.getElementById("add").setAttribute("value",orderString);
-//   alert(document.getElementById("add").value);
-  alert("Please click the button at the bottom");
-}
-
-
-</script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/views/Student/studentMenu.js" charset="utf-8"></script>
-
-</body>
 
 </html>

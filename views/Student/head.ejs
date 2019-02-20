@@ -1,114 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+	<head>
+		<link href="./css/home.css" rel="stylesheet">
+		<link href="" >
+		<meta charset="UTF-8">
+		<title> SU CAFE </title>
+	</head>
 
-<head>
-  <meta charset="utf-8">
-  <link type="text/css" rel="stylesheet" href="demo.css" </head> <style>
+	<style type="text/css">
+		body {
+				height: 2200px;
+			}
 
-  table, td {
-    border: 0px solid black;
-    font-size: 40px;
-  }
+			body h2 {
+				margin-top: 70px;
+				margin-bottom: 30px;
+				font-family: fantasy;
+				font-weight: bold;
+			}
 
-  .tb{
-    text-align: center;
-    padding-left: 30%;
-  }
+			#myTable {
+				padding: 10px;
+				margin-right: auto;
+				margin-left: auto;
+			}
 
-  tr{
-    padding:  40px;
-  }
+			#myTable th {
+				color: orange;
+			}
 
-  h1{
-  font-weight: bold;
-  color: orange;
-  font-size: 50px;
-  }
+			.container_menus {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 180px;
+				margin-bottom: 50px;
+				width: 300px;
 
-  body{
-  font-size: 15px;
-  line-height: 1.5;
-  }
-  .menu{
-  margin-left:35px;
-  }
+			}
 
-  .menu ul{
-  list-style:none;
-  }
+			.container_menus a {
+				text-decoration: none;
+				font-family: fantasy;
+				color: #285;
+			}
 
-  .menu li{
-  float: left;
-  list-style-type: none;
-  background-color: orange;
-  padding:0px 15px;
-  line-height: 30px;
-  width: 60px;
-  border-bottom:1px solid #CCC;
-  margin-right: 110px;
-  color: white;
-  text-align :center;
-  }
+			.container_menus a:hover{
+				color: orange;
+			}
 
-  .pic1 {
-  clear:both;
-  margin-left:75px;
-  margin-top: 100px;
-  }
+			.container_menus a:active{
+				color: blue;
+			}
 
-  .pic1 ul{
-  list-style:none;
-  }
+			#Entree {
+				height: 500px;
+				box-shadow: 0px 0px 5px 1px gray;
+				border: 1px solid #CCC;
+			}
 
-  img {
-  margin-top: 20px;
-  margin-right: 95px;
-  }
+			#pics img {
+				border: 1px solid black;
+			}
 
-  .name{
-  clear:both;
-  margin-left:35px;
-  margin-top: 15px;
-  }
+			#dis a {
+				font-family: fantasy;
+				margin-right: 40px;
+				margin-left: 40px;
+			}
 
-  .name ul{
-  list-style:none;
-  }
+			#btn button {
+				border: 1px solid black;
+				background-color: orange;
+				font-family: sans-serif;
+				font-size: 12px;
+				color: white;
+				width: 200px;
+				height: 20px;
+			}
 
-  .name li{
-  float: left;
-  margin-right: 108px;
+			#btn button:hover {
+				background-color: #285;
+			}
 
-  }
+			#btn button:active {
+				background-color: gray;
+			}
 
-  .btn1{
-  margin-left:40px;
-  clear: both;
+			#Drinks {
+				height: 500px;
+				box-shadow: 0px 0px 5px 1px gray;
+				border: 1px solid #CCC;
+			}
 
-  }
-  .btn1 ul{
-  list-style:none;
-  }
-  .btn1 li{
-  float:left;
-  margin-top: 10px;
-  margin-right: 130px;
-  }
+			#Combo {
+				height: 500px;
+				box-shadow: 0px 0px 5px 1px gray;
+				border: 1px solid #CCC;
+			}
 
-  #list{
-  clear:both
-  }
+			#Dessert {
+				height: 500px;
+				box-shadow: 0px 0px 5px 1px gray;
+				border: 1px solid #CCC;
+			}
 
-  </style>
+			.cart {
+				padding: 10px;
+				width: 250px;
+				position: fixed;
+				right: 0px;
+				top: 30%;
+				border:1px solid #CCC;
+				background-color: white;
 
-<body>
+			}
 
-  <h1>SU Cafe Menu</h1>
-  <div class="menu">
-    <ul>
-      <li>Entree</li>
-      <li>Drink </li>
-      <li>Dessert </li>
-      <li>Combo </li>
-    </ul>
-  </div>
+
+	</style>
+
+	<body>
+		<div id="navbar">
+			<h1>   &nbsp &nbsp SU Cafe </h1>
+			<a href="">Cart</a>
+			<a href="./aboutme.html">About us</a>
+  			<a href="./contact.html">Hours</a>
+  			<a href="./menus.html">Menus</a>
+  			<a href="./home.html">Home</a>
+		</div>
+
+		<div class="container_menus">
+			<a href="#Entree"> Entree </a>
+			<a> | </a>
+			<a href="#Drinks"> Drinks </a>
+			<a> | </a>
+			<a href="#Dessert"> Dessert </a>
+			<a> | </a>
+			<a href="#Combo"> Combo </a>
+		</div>
